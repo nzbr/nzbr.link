@@ -14,7 +14,7 @@ provider "kubernetes" {
 }
 
 locals {
-  base_name = "nzbr.link"
+  base_name = "nzbr-link"
   host = "nzbr.link"
   selectors = {
     "app.kubernetes.io/name"     = "nzbr.link"

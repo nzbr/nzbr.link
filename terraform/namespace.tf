@@ -1,5 +1,5 @@
 resource "kubernetes_namespace" "default" {
   metadata {
-    name = "nzbr.link"
+    name = local.base_name
   }
 }
