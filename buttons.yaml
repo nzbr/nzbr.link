@@ -10,3 +10,23 @@ buttons:
   - label: Twitter
     icon: twitter
     url: https://twitter.com/_nzbr
+
+  - label: Discord
+    icon: discord
+    url: https://discord.com/users/180412544937099264
+
+  - label: Matrix
+    icon: message-text
+    url: https://matrix.to/#/@nzbr:nzbr.de
+
+  - label: barq
+    icon: cat
+    url: https://barq.social/p/HKgt5Xi
+
+  - label: YouTube
+    icon: youtube
+    url: https://www.youtube.com/channel/UCEMxItWCYkKDIS-hx54vH_w
+
+  - label: Twitch
+    icon: twitch
+    url: https://www.twitch.tv/nzbr_
