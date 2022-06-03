@@ -1,7 +1,12 @@
 resource "kubernetes_ingress_v1" "ingress" {
   metadata {
-    namespace = kubernetes_namespace.default.metadata.0.name
-    name      = local.base_name
+    namespace   = kubernetes_namespace.default.metadata.0.name
+    name        = local.base_name
+    annotations = {
+      "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
+      "kubernetes.io/ingress.class"    = "nginx"
+      "kubernetes.io/tls-acme"         = "true"
+    }
   }
   spec {
     rule {
