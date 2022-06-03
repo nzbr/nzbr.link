@@ -30,7 +30,7 @@
 
     <div id="buttons">
       {% for button in buttons %}
-      <a class="button" href="{{ button.url }}">
+      <a rel="me" class="button" href="{{ button.url }}">
         <span class="text"><span class="mdi mdi-{{button.icon}}"></span><span class="label">{{button.label}}</span></span>
       </a>
       {% endfor %}
