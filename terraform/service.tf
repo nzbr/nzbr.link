@@ -10,7 +10,7 @@ resource "kubernetes_service" "frontend_svc" {
       port        = 8080
       protocol    = "TCP"
       name        = "http"
-      target_port = 80
+      target_port = 8080
     }
   }
 }
