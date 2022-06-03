@@ -76,7 +76,10 @@ body {
       font-size: 18pt;
       font-smooth: never;
       -webkit-font-smoothing: none;
+      text-decoration: none;
+      font-weight: normal;
       text-align: center;
+      margin: .5rem 0 0;
       .green {
         color: lime;
       }
