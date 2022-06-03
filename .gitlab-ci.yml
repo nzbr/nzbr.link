@@ -1,4 +1,9 @@
+stages:
+  - build
+  - deploy
+
 docker:
+  stage: build
   needs: []
   tags:
     - nix
@@ -13,6 +18,7 @@ docker:
       - image-hash
 
 deploy:
+  stage: deploy
   only:
     - main
   image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
