@@ -2,15 +2,17 @@
 @font-face {
   /* Font from https://laemeur.sdf.org/fonts/ */
   font-family: "More Perfect DOS VGA";
-    src: url("MorePerfectDOSVGA.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+  src: local("More Perfect DOS VGA"), url("MorePerfectDOSVGA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   /* Roboto Slab is licensed under the Apache 2 license. See ./Roboto.LICENSE */
   font-family: "Roboto Slab";
-  src: url("Roboto-Slab-Regular.woff2") format("woff2");
+  src: local("Roboto Slab"), url("Roboto-Slab-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
