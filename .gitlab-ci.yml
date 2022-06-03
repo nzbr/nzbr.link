@@ -20,6 +20,7 @@ deploy:
     - kube-deploy
   needs:
     - docker
+  resource_group: production
   environment:
     name: production
     url: https://nzbr.link
