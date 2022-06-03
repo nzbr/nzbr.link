@@ -1,5 +1,6 @@
 $grey: #aaaaaa;
 $border-gradient: linear-gradient(120deg, #00ff00, #00c8c8 50%,#aa00ff);
+$avatar-size: 5em;
 
 html {
   display: flex;
@@ -21,6 +22,8 @@ body {
 }
 
 #center-card {
+  margin-top: $avatar-size/2;
+
   border-radius: 25px;
   box-shadow: 2px 2px 20px black;
 
@@ -46,7 +49,6 @@ body {
     margin-bottom: .25rem;
 
     #avatar-border {
-      $avatar-size: 5em;
 
       display: flex;
       padding: 3px;
