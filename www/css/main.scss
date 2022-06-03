@@ -32,7 +32,7 @@ body {
   $padding-size: 1rem;
   padding: 0 $padding-size $padding-size;
 
-  $backdrop-filter: blur(15px);
+  $backdrop-filter: blur(20px);
   @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
     backdrop-filter: $backdrop-filter;
     -webkit-backdrop-filter: $backdrop-filter;
