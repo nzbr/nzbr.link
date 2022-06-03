@@ -21,8 +21,6 @@ body {
 }
 
 #center-card {
-  backdrop-filter: blur(15px);
-  background-color: #00000070;
   border-radius: 25px;
   box-shadow: 2px 2px 20px black;
 
@@ -30,6 +28,17 @@ body {
 
   $padding-size: 1rem;
   padding: 0 $padding-size $padding-size;
+
+  $backdrop-filter: blur(15px);
+  @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
+    backdrop-filter: $backdrop-filter;
+    -webkit-backdrop-filter: $backdrop-filter;
+    background-color: #00000070;
+  }
+  @supports not (backdrop-filter: $backdrop-filter) {
+    background-color: #303030;
+  }
+
 
   header {
     display: flex;
