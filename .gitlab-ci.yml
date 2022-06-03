@@ -1,0 +1,42 @@
+docker:
+  needs: []
+  tags:
+    - nix
+  interruptible: true
+  script:
+    - nix-env -iA nixpkgs.skopeo
+    - nix-build ./docker.nix
+    - skopeo login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - skopeo copy --insecure-policy docker-archive:result docker://${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG} --digestfile image-hash
+  artifacts:
+    paths:
+      - image-hash
+
+deploy:
+  only:
+    - main
+  image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
+  tags:
+    - kube-deploy
+  needs:
+    - docker
+  environment:
+    name: production
+    url: https://nzbr.link
+  variables:
+    TF_ADDRESS: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/${CI_ENVIRONMENT_SLUG}
+  before_script:
+    - apk --no-cache add jq curl
+    - curl -o /bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+    - chmod +x /bin/kubectl
+    - cd terraform
+    - |
+      cat > vars.auto.tfvars << EOF
+      dockerconfigjson = "{ \"auths\": { \"$CI_REGISTRY\": { \"auth\": \"$(echo -n $CI_DEPLOY_USER:$CI_DEPLOY_PASSWORD | base64)\" } } }"
+      kubeconfig = "$KUBECONFIG"
+      image = "${CI_REGISTRY_IMAGE}@$(cat ../image-hash)"
+      EOF
+  script:
+    - gitlab-terraform init
+    - gitlab-terraform plan
+    - gitlab-terraform apply

@@ -1,0 +1,160 @@
+$grey: #aaaaaa;
+$border-gradient: linear-gradient(120deg, #00ff00, #00c8c8 50%,#aa00ff);
+
+html {
+  display: flex;
+  min-height: 100%;
+}
+
+body {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+#center-card {
+  backdrop-filter: blur(15px);
+  background-color: #00000070;
+  border-radius: 25px;
+  box-shadow: 2px 2px 20px black;
+
+  color: $grey;
+
+  $padding-size: 1rem;
+  padding: 0 $padding-size $padding-size;
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: .25rem;
+
+    #avatar-border {
+      $avatar-size: 5em;
+
+      display: flex;
+      padding: 3px;
+      border-radius: $avatar-size;
+      margin-top: -$avatar-size/2;
+
+      background-image: $border-gradient;
+      box-shadow: 1px 1px 10px black;
+
+      #avatar {
+
+        width: $avatar-size;
+        height: $avatar-size;
+
+        //border-color: white;
+        //border-style: solid;
+        //border-width: 3px;
+        border-radius: $avatar-size;
+      }
+    }
+  }
+
+  main {
+    margin-bottom: 1rem;
+
+    #title {
+      font-family: "More Perfect DOS VGA", monospace;
+      font-size: 18pt;
+      font-smooth: never;
+      -webkit-font-smoothing: none;
+      text-align: center;
+      .green {
+        color: lime;
+      }
+      .grey {
+        color: $grey;
+      }
+    }
+
+    #buttons {
+      $gap: .5em;
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      padding-top: $gap;
+
+      .button {
+        display: block;
+        background-color: $grey;
+        color: $grey;
+        border: none;
+        border-radius: 8px;
+        padding: 3px;
+        min-width: 25em;
+
+        font-size: 12pt;
+        font-smooth: never;
+        -webkit-font-smoothing: none;
+        font-family: "More Perfect DOS VGA", monospace;
+        cursor: pointer;
+
+        transition-duration: .25s;
+
+        &:hover {
+          color: white;
+          background-image: $border-gradient;
+          box-shadow: 1px 1px 5px black;
+        }
+
+        .text {
+          border-radius: 6px;
+          background-color: black;
+          //display: block;
+          //padding-left: 10px;
+          //padding-right: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .mdi {
+            width: 3rem;
+            text-align: center;
+          }
+
+          .label {
+            flex: 1;
+            padding-right: 3em;
+            text-align: center;
+          }
+
+          //&:hover {
+          //  background: none;
+          //}
+        }
+      }
+    }
+  }
+
+  footer {
+    padding-left: .25rem;
+    font-size: 8pt;
+    font-family: "Roboto Slab", sans-serif;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+
+  &:hover {
+    color: lime;
+  }
+}

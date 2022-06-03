@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>nzbr.link</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/fonts/stylesheet.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="dist/MaterialDesignIcons/css/materialdesignicons.min.css">
+  <meta name="theme-color" content="#00ff00">
+</head>
+
+<body>
+
+<div id="center-card">
+
+  <header>
+    <div id="avatar-border">
+      <img src="img/avatar.jpg" alt="Avatar" id="avatar">
+    </div>
+  </header>
+
+  <main>
+    <div id="title">
+      <span class="green">nzbr</span><span class="grey">.link</span>
+    </div>
+
+    <div id="buttons">
+      {% for button in buttons %}
+      <a class="button" href="{{ button.url }}">
+        <span class="text"><span class="mdi mdi-{{button.icon}}"></span><span class="label">{{button.label}}</span></span>
+      </a>
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer>
+    Avatar by <a href="https://twitter.com/Sir_Lorart">Lorart</a><br/>
+    Photo by <a href="https://unsplash.com/@sandrokatalina?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sandro Katalina</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </footer>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+buttons:
+  - label: GitHub
+    icon: github
+    url: https://github.com/nzbr
+
+  - label: Mastodon
+    icon: mastodon
+    url: https://chaos.social/@nzbr
+
+  - label: Twitter
+    icon: twitter
+    url: https://twitter.com/_nzbr
