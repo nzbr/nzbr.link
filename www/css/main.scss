@@ -5,6 +5,7 @@ $avatar-size: 5em;
 html {
   display: flex;
   min-height: 100%;
+  background-color: black;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
   margin-top: $avatar-size/2;
 
   border-radius: 25px;
-  box-shadow: 2px 2px 20px black;
+  box-shadow: 2px 2px 20px #030303;
 
   color: $grey;
 
@@ -36,7 +37,7 @@ body {
   @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
     backdrop-filter: $backdrop-filter;
     -webkit-backdrop-filter: $backdrop-filter;
-    background-color: #00000070;
+    background-color: #30303070;
   }
   @supports not (backdrop-filter: $backdrop-filter) {
     background-color: #303030;
