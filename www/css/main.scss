@@ -114,9 +114,9 @@ body {
         transition-duration: .25s;
 
         &:hover {
-          color: white;
+          color: #00ff00;
           background-image: $border-gradient;
-          box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px #101010;
         }
 
         .text {
