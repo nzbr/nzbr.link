@@ -1,0 +1,9 @@
+
+@font-face {
+  /* Font from https://laemeur.sdf.org/fonts/ */
+  font-family: "More Perfect DOS VGA";
+  src: local("More Perfect DOS VGA"), url("MorePerfectDOSVGA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

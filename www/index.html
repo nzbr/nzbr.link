@@ -1,38 +1,48 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class='no-js' lang='en'>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset='utf-8'>
 
   <title>nzbr.link</title>
 
-  <meta name="description" content="Links to my profiles on various websites">
-  <meta name="theme-color" content="#00ff00">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='description' content='Links to my profiles on various websites'>
+  <meta name='theme-color' content='#00ff00'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="dist/fonts/stylesheet.css">
+  <link rel='stylesheet' href='css/main.css'>
 </head>
 
 <body>
 
-<div id="center-card">
+<div id='center-card'>
 
   <header>
-    <div id="avatar-border">
-      <img src="img/avatar.webp" alt="Avatar" id="avatar">
+    <div id='avatar-border'>
+      <img src='img/avatar.webp' alt='Avatar' id='avatar'>
     </div>
   </header>
 
   <main>
-    <h1 id="title">
-      <span class="green">nzbr</span><span class="grey">.link</span>
+    <h1 id='title'>
+      <span class='green'>nzbr</span><span class='grey'>.link</span>
     </h1>
 
-    <div id="buttons">
+    <div id='buttons'>
       {% for button in buttons %}
-      <a rel="me" class="button" href="{{ button.url }}">
-        <span class="text"><span class="mdi mdi-{{button.icon}}"></span><span class="label">{{button.label}}</span></span>
+      <a rel='me' class='button' href='{{ button.url }}'>
+        <div class='text'>
+          <div class='icon-container'>
+            {% if button.icon.startswith('mdi:') %}
+            <img class='icon' src='node_modules/@mdi/svg/svg/{{button.icon[4:]}}.svg' alt='{{button.label}}' />
+            {% else %}
+            <img class='icon' src='img/icons/{{button.icon}}' alt='{{button.icon}}' />
+            {% endif %}
+          </div>
+          <div class='label'>
+            {{button.label}}
+          </div>
+        </div>
       </a>
       {% endfor %}
     </div>
@@ -46,6 +56,7 @@
 
 </body>
 
-<link rel="stylesheet" href="dist/MaterialDesignIcons/css/materialdesignicons.min.css">
+<link rel='stylesheet' href='fonts/stylesheet.css'>
+<link rel='stylesheet' href='node_modules/@fontsource/roboto-slab/index.css'>
 
 </html>

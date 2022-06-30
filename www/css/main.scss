@@ -129,9 +129,18 @@ body {
           flex-direction: row;
           align-items: center;
 
-          .mdi {
+          .icon-container {
             width: 3rem;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+              width: auto;
+              height: 1rem;
+              text-align: center;
+              filter: invert(75%);
+            }
           }
 
           .label {
@@ -140,9 +149,6 @@ body {
             text-align: center;
           }
 
-          //&:hover {
-          //  background: none;
-          //}
         }
       }
     }
@@ -152,6 +158,8 @@ body {
     padding-left: .25rem;
     font-size: 8pt;
     font-family: "Roboto Slab", sans-serif;
+    display: flex;
+    justify-content: space-between;
 
     a {
       text-decoration: underline;

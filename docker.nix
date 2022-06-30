@@ -1,11 +1,13 @@
 { pkgs ? import <nixpkgs> {}}:
 
 let
+  node_modules = import ./www/modules.nix { inherit pkgs; };
   content = pkgs.runCommand "nzbr.link" { } ''
       www=$out/usr/share/nginx/html
       mkdir -p $www $out/etc/nginx
       cd ${./.}
       cp -r --no-preserve=mode www/. $www
+      cp -r ${node_modules} $www/node_modules
       rm -rf $www/index.html $www/css/*.css*
       ${pkgs.j2cli}/bin/j2 www/index.html buttons.yaml > $www/index.html
       ${pkgs.sass}/bin/sass www/css/main.scss $www/css/main.css

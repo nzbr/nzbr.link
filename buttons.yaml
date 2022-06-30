@@ -1,26 +1,26 @@
 buttons:
   - label: GitHub
-    icon: github
+    icon: mdi:github
     url: https://github.com/nzbr
 
   - label: Mastodon
-    icon: mastodon
+    icon: mdi:mastodon
     url: https://chaos.social/@nzbr
 
   - label: Twitter
-    icon: twitter
+    icon: mdi:twitter
     url: https://twitter.com/_nzbr
 
   - label: Discord
-    icon: discord
+    icon: mdi:discord
     url: https://discord.com/users/180412544937099264
 
   - label: Matrix
-    icon: message-text
+    icon: matrix.svg
     url: https://matrix.to/#/@nzbr:nzbr.de
 
   - label: barq
-    icon: cat
+    icon: barq.webp
     url: https://barq.social/p/HKgt5Xi
 
 #  - label: YouTube
@@ -32,5 +32,5 @@ buttons:
 #    url: https://www.twitch.tv/nzbr_
 
   - label: Server Status
-    icon: alarm-light
+    icon: mdi:alarm-light
     url: https://status.nzbr.de
