@@ -1,27 +1,26 @@
-buttons:
-  - label: GitHub
-    icon: mdi:github
-    url: https://github.com/nzbr
+- label: GitHub
+  icon: mdi:github
+  url: https://github.com/nzbr
 
-  - label: Mastodon
-    icon: mdi:mastodon
-    url: https://chaos.social/@nzbr
+- label: Mastodon
+  icon: mdi:mastodon
+  url: https://chaos.social/@nzbr
 
-  - label: Twitter
-    icon: mdi:twitter
-    url: https://twitter.com/_nzbr
+- label: Twitter
+  icon: mdi:twitter
+  url: https://twitter.com/_nzbr
 
-  - label: Discord
-    icon: mdi:discord
-    url: https://discord.com/users/180412544937099264
+- label: Discord
+  icon: mdi:discord
+  url: https://discord.com/users/180412544937099264
 
-  - label: Matrix
-    icon: matrix.svg
-    url: https://matrix.to/#/@nzbr:nzbr.de
+- label: Matrix
+  icon: matrix.svg
+  url: https://matrix.to/#/@nzbr:nzbr.de
 
-  - label: barq
-    icon: barq.webp
-    url: https://barq.social/p/HKgt5Xi
+- label: barq
+  icon: barq.webp
+  url: https://barq.social/p/HKgt5Xi
 
 #  - label: YouTube
 #    icon: youtube
@@ -31,6 +30,6 @@ buttons:
 #    icon: twitch
 #    url: https://www.twitch.tv/nzbr_
 
-  - label: Server Status
-    icon: mdi:alarm-light
-    url: https://status.nzbr.de
+- label: Server Status
+  icon: mdi:alarm-light
+  url: https://status.nzbr.de

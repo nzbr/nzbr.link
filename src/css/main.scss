@@ -1,8 +1,8 @@
 $grey: #aaaaaa;
 $border-gradient: linear-gradient(120deg, #00ff00, #00c8c8 50%,#aa00ff);
 $avatar-size: 5em;
-$dosfont: "More Perfect DOS VGA", "Courier", monospace;
-$textfont: "Roboto Slab", "Tahoma", sans-serif;
+$dos-font: "More Perfect DOS VGA", "Courier", monospace;
+$text-font: "Roboto Slab", "Tahoma", sans-serif;
 
 html {
   display: flex;
@@ -56,7 +56,7 @@ body {
       display: flex;
       padding: 3px;
       border-radius: $avatar-size;
-      margin-top: -$avatar-size/2;
+      margin-top: calc($avatar-size / -2);
 
       background-image: $border-gradient;
       box-shadow: 1px 1px 10px black;
@@ -75,7 +75,7 @@ body {
     margin-bottom: 1rem;
 
     #title {
-      font-family: $dosfont;
+      font-family: $dos-font;
       font-size: 18pt;
       font-smooth: never;
       -webkit-font-smoothing: none;
@@ -110,7 +110,7 @@ body {
         font-size: 12pt;
         font-smooth: never;
         -webkit-font-smoothing: none;
-        font-family: $dosfont;
+        font-family: $dos-font;
         cursor: pointer;
 
         transition-duration: .25s;
@@ -159,7 +159,7 @@ body {
   footer {
     padding-left: .25rem;
     font-size: 8pt;
-    font-family: $textfont;
+    font-family: $text-font;
     display: flex;
     justify-content: space-between;
 
