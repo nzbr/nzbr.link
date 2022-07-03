@@ -25,7 +25,7 @@ body {
 }
 
 #center-card {
-  margin-top: $avatar-size/2;
+  margin-top: calc($avatar-size/2);
 
   border-radius: 25px;
   box-shadow: 2px 2px 20px #030303;

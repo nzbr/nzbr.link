@@ -1,9 +1,8 @@
 {
+  "name": "nzbr.link",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prepublish": "run-script-os",
-    "prepublish:windows": "wsl -d NixOS sh -c \"nix run nixpkgs#yarn2nix > yarn.nix\"",
-    "prepublish:default": "if hash nix; then nix run nixpkgs#yarn2nix > yarn.nix; fi",
     "start": "parcel",
     "prebuild": "rimraf ./dist",
     "build": "parcel build"
