@@ -163,6 +163,18 @@ body {
     display: flex;
     justify-content: space-between;
 
+    .center {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+      a {
+        pointer-events: all;
+      }
+    }
+
     a {
       text-decoration: underline;
     }
