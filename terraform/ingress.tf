@@ -27,6 +27,7 @@ resource "kubernetes_ingress_v1" "ingress" {
       }
     }
     tls {
+      secret_name = "ingress-tls"
       hosts = [
         local.host
       ]
