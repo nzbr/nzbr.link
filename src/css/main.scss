@@ -1,13 +1,22 @@
 $grey: #aaaaaa;
-$border-gradient: linear-gradient(120deg, #00ff00, #00c8c8 50%,#aa00ff);
+$border-gradient: linear-gradient(120deg, #00ff00, #00c8c8 50%, #aa00ff);
 $avatar-size: 5em;
 $dos-font: "More Perfect DOS VGA", "Courier", monospace;
 $text-font: "Roboto Slab", "Tahoma", sans-serif;
+$body-padding: 8px;
+$card-padding: 1rem;
+$button-border: 3px;
+$button-width: min(25rem, calc(100vw - 2 * $body-padding - 2 * $card-padding - 2 * $button-border));
 
 html {
   display: flex;
   min-height: 100%;
   background-color: black;
+
+  background-image: url("../img/background.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
 }
 
 body {
@@ -17,23 +26,19 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100%;
-
-  background-image: url("../img/background.webp");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
+  margin: 0;
+  padding: $body-padding;
 }
 
 #center-card {
-  margin-top: calc($avatar-size/2);
+  margin-top: calc($avatar-size / 2);
 
   border-radius: 25px;
   box-shadow: 2px 2px 20px #030303;
 
   color: $grey;
 
-  $padding-size: 1rem;
-  padding: 0 $padding-size $padding-size;
+  padding: 0 $card-padding $card-padding;
 
   $backdrop-filter: blur(20px);
   @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
@@ -44,7 +49,6 @@ body {
   @supports not (backdrop-filter: $backdrop-filter) {
     background-color: #303030;
   }
-
 
   header {
     display: flex;
@@ -83,9 +87,11 @@ body {
       font-weight: normal;
       text-align: center;
       margin: .5rem 0 0;
+
       .green {
         color: lime;
       }
+
       .grey {
         color: $grey;
       }
@@ -104,8 +110,8 @@ body {
         color: $grey;
         border: none;
         border-radius: 8px;
-        padding: 3px;
-        min-width: 25em;
+        padding: $button-border;
+        min-width: $button-width;
 
         font-size: 12pt;
         font-smooth: never;
@@ -170,6 +176,7 @@ body {
       width: 100%;
       text-align: center;
       pointer-events: none;
+
       a {
         pointer-events: all;
       }
