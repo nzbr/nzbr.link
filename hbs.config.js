@@ -6,4 +6,7 @@ module.exports = {
     ...button,
     icon:  button.icon.startsWith('mdi:') ? `../node_modules/@mdi/svg/svg/${button.icon.substring(4)}.svg` : `img/icons/${button.icon}`,
   })),
+  address: "TmljbyBKYW5zZW4KYy9vIGRldnNhdXIgVUcgKGhhZnR1bmdzYmVzY2hy5G5rdCkKTWFydGluLVNjaG1lad9lci1XZWcgMTJhCjQ0MjI3IERvcnRtdW5k",
+  email: "a29udGFrdEBuemJyLmRl",
+  phone: "MDIzMS01ODY5MDYxNw==",
 };

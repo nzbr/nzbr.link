@@ -4,5 +4,8 @@
     "*.hbs": [
       "parcel-transformer-handlebars"
     ],
+    "robots.txt": [
+      "@parcel/transformer-raw"
+    ],
   },
 }

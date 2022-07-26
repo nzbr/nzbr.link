@@ -7,13 +7,20 @@
     "prebuild": "rimraf ./dist ./.parcel-cache",
     "build": "parcel build --no-cache"
   },
-  "source": "src/index.hbs",
+  "source": [
+    "src/index.hbs",
+    "src/impressum.hbs",
+    "src/robots.txt"
+  ],
   "dependencies": {
     "@fontsource/roboto-slab": "^4.5.8",
-    "@mdi/svg": "^6.7.96"
+    "@mdi/svg": "^6.7.96",
+    "@xeserv/xeact": "https://github.com/nzbr/Xeact/archive/refs/heads/jsx.tar.gz"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.6.2",
+    "@parcel/transformer-typescript-tsc": "^2.6.2",
+    "@parcel/validator-typescript": "^2.6.2",
     "@types/js-yaml": "^4.0.5",
     "js-yaml": "^4.1.0",
     "parcel": "^2.6.2",
