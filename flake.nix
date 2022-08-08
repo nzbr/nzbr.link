@@ -29,7 +29,8 @@
               src = ./.;
               buildPhase = ''
                 export HOME=$PWD
-                ln -sfT $node_modules deps/$pname/node_modules
+                rm deps/$pname/node_modules
+                cp -r $node_modules/. deps/$pname/node_modules
                 yarn --offline build
               '';
               installPhase = ''
