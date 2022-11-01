@@ -16,7 +16,11 @@
 
 - label: Matrix
   icon: matrix.svg
-  url: https://matrix.to/#/@nzbr:nzbr.de
+  url: "https://matrix.to/#/@nzbr:nzbr.de"
+
+- label: Steam
+  icon: mdi:steam
+  url: https://steamcommunity.com/id/_nzbr
 
 - label: barq
   icon: barq.webp
