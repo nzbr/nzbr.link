@@ -27,11 +27,11 @@
   url: https://barq.social/p/HKgt5Xi
 
 #  - label: YouTube
-#    icon: youtube
-#    url: https://www.youtube.com/channel/UCEMxItWCYkKDIS-hx54vH_w
+#    icon: mdi:youtube
+#    url: https://www.youtube.com/@nzbr
 #
 #  - label: Twitch
-#    icon: twitch
+#    icon: mdi:twitch
 #    url: https://www.twitch.tv/nzbr_
 
 - label: Server Status

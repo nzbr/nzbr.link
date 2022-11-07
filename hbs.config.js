@@ -8,5 +8,5 @@ module.exports = {
   })),
   address: "TmljbyBKYW5zZW4KYy9vIGRldnNhdXIgVUcgKGhhZnR1bmdzYmVzY2hy5G5rdCkKTWFydGluLVNjaG1lad9lci1XZWcgMTJhCjQ0MjI3IERvcnRtdW5k",
   email: "a29udGFrdEBuemJyLmRl",
-  phone: "MDIzMS01ODY5MDYxNw==",
+  phone: "KzQ5MTU5MDg2MzU0NzA=",
 };
