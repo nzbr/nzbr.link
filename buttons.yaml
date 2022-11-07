@@ -6,17 +6,17 @@
   icon: mdi:mastodon
   url: https://chaos.social/@nzbr
 
-- label: Twitter
-  icon: mdi:twitter
-  url: https://twitter.com/_nzbr
-
-- label: Discord
-  icon: mdi:discord
-  url: https://discord.com/users/180412544937099264
+# - label: Twitter
+#   icon: mdi:twitter
+#   url: https://twitter.com/_nzbr
 
 - label: Matrix
   icon: matrix.svg
   url: "https://matrix.to/#/@nzbr:nzbr.de"
+
+- label: Discord
+  icon: mdi:discord
+  url: https://discord.com/users/180412544937099264
 
 - label: Steam
   icon: mdi:steam
