@@ -136,23 +136,9 @@
 </body>
 
 <script type='module'>
-  import { c, r } from '@xeserv/xeact';
+  import { run } from './js/decode.tsx';
 
-  r(() => {
-    ([...c('encoded')]).forEach(elem => {
-      elem.classList.remove('encoded');
-      elem.innerText = atob(elem.innerHTML);
-    });
-    ([...c('link')]).forEach(elem => {
-      elem.setAttribute('href', elem.innerText);
-    });
-    ([...c('mailto')]).forEach(elem => {
-      elem.setAttribute('href', 'mailto:' + elem.innerText);
-    });
-    ([...c('tel')]).forEach(elem => {
-      elem.setAttribute('href', 'tel:' + elem.innerText);
-    });
-  });
+  run(document.body);
 </script>
 
 </html>

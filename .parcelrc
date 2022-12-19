@@ -4,6 +4,9 @@
     "*.hbs": [
       "parcel-transformer-handlebars"
     ],
+    "*.{ts,tsx}": [
+      "@parcel/transformer-typescript-tsc"
+    ],
     "*.{ttf,woff,woff2}": [
       "parcel-transformer-fonts"
     ],
@@ -11,4 +14,9 @@
       "@parcel/transformer-raw"
     ],
   },
+  "validators": {
+    "*.{ts,tsx}": [
+      "@parcel/validator-typescript"
+    ]
+  }
 }
