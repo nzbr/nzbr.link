@@ -3,7 +3,11 @@
 @font-face {
   /* Font from https://laemeur.sdf.org/fonts/ */
   font-family: "More Perfect DOS VGA";
-  src: local("More Perfect DOS VGA"), url("MorePerfectDOSVGA.woff2") format("woff2");
+  src:
+    //local("More Perfect DOS VGA"),
+    url("./More Perfect DOS VGA.ttf?as=woff2") format("woff2"),
+    url("./More Perfect DOS VGA.ttf?as=woff") format("woff"),
+    url("./More Perfect DOS VGA.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

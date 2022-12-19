@@ -4,6 +4,9 @@
     "*.hbs": [
       "parcel-transformer-handlebars"
     ],
+    "*.{ttf,woff,woff2}": [
+      "parcel-transformer-fonts"
+    ],
     "robots.txt": [
       "@parcel/transformer-raw"
     ],
