@@ -41,7 +41,7 @@ body {
   color: $grey;
 
   padding: 0 $card-padding $card-padding;
-  min-width: calc($button-width + 2*$button-border);
+  min-width: calc($button-width + 2 * $button-border);
 
   $backdrop-filter: blur(20px);
   @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
@@ -192,6 +192,7 @@ body {
 
   .embed {
     width: min-content;
+    max-width: calc(100vw - (2 * $body-padding + 2 * $card-padding));
     display: inline-block;
 
     overflow: auto;
