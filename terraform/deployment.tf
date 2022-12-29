@@ -17,7 +17,7 @@ resource "kubernetes_deployment" "deployment" {
           name = kubernetes_secret.docker_registry.metadata.0.name
         }
         container {
-          name = "nginx"
+          name = local.base_name
           image = var.image
         }
       }

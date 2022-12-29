@@ -13,13 +13,13 @@ dockerTools.buildLayeredImage {
   '';
 
   config = {
-    Cmd = [ "${dotnet-aspnetcore_7}/bin/dotnet" "backend.dll" "--urls=http://0.0.0.0:80/" ];
+    Cmd = [ "${dotnet-aspnetcore_7}/bin/dotnet" "backend.dll" "--urls=http://0.0.0.0:8080/" ];
     WorkingDir = backend;
     Env = [
       "COMPlus_EnableDiagnostics=0" # dotnet crashes if this isn't set on a read-only filesystem
     ];
     ExposedPorts = {
-      "80/tcp" = { };
+      "8080/tcp" = { };
     };
   };
 }
