@@ -23,21 +23,7 @@
         };
 
         packages = rec {
-          nzbr-dot-link =
-            pkgs.mkYarnPackage {
-              name = "nzbr.link";
-              src = ./.;
-              buildPhase = ''
-                export HOME=$PWD
-                rm deps/$pname/node_modules
-                cp -r $node_modules/. deps/$pname/node_modules
-                yarn --offline build
-              '';
-              installPhase = ''
-                cp -r deps/$pname/dist $out
-              '';
-              distPhase = "true";
-            };
+          frontend = pkgs.callPackage ./frontend {};
 
           prefetch-docker = pkgs.writeShellScriptBin "prefetch-docker" ''
             ${pkgs.nix-prefetch-docker}/bin/nix-prefetch-docker nginx alpine > nginx.nix
@@ -54,7 +40,7 @@
                 name = "nginx.conf";
                 src = ./nginx.conf;
                 dir = "etc/nginx";
-                root = nzbr-dot-link;
+                root = frontend;
               })
             ];
 

@@ -1,6 +1,11 @@
-node_modules/
-dist/
-.parcel-cache/
-yarn-error.log
-result
 .direnv/
+result/
+result
+
+bin/
+*.dll
+*.exe
+*.cache
+.vs/
+*.DotSettings.user
+obj/

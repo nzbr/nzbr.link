@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontend", "frontend\frontend.esproj", "{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "backend\backend.csproj", "{98863FDB-FA8E-4E66-9476-662A6689A3CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{86D47DB8-0919-4929-9841-EC9B8FCB282F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.envrc = .envrc
+		.gitlab-ci.yml = .gitlab-ci.yml
+		.gitignore = .gitignore
+		flake.nix = flake.nix
+	EndProjectSection
+EndProject
+Project("{3B489464-D0CF-449B-A80F-3646582C212E}") = "terraform", "terraform/terraform.esproj", "{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C066B66B-92BC-405C-8C8F-C26EDF89F2CA}
+	EndGlobalSection
+EndGlobal

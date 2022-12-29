@@ -1,7 +1,7 @@
 {
   imageName = "nginx";
-  imageDigest = "sha256:2452715dd322b3273419652b7721b64aa60305f606ef7a674ae28b6f12d155a3";
-  sha256 = "1fc2q46lmspkczgmlf9nxxyc6sa59bzyvrljrqkprk8670i23r8x";
+  imageDigest = "sha256:dd8a054d7ef030e94a6449783605d6c306c1f69c10c2fa06b66a030e0d1db793";
+  sha256 = "1wljwzcdfw5yid7w3dq5jg2r3p5bpras0f76i8s0vsw7vspqc13y";
   finalImageName = "nginx";
   finalImageTag = "alpine";
 }
