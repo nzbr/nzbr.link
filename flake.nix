@@ -14,38 +14,18 @@
         devShells = {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
+              dotnet-sdk_7
               nixpkgs-fmt
               nodejs-16_x
               yarn
-              packages.prefetch-docker
             ];
           };
         };
 
         packages = rec {
-          frontend = pkgs.callPackage ./frontend {};
-
-          prefetch-docker = pkgs.writeShellScriptBin "prefetch-docker" ''
-            ${pkgs.nix-prefetch-docker}/bin/nix-prefetch-docker nginx alpine > nginx.nix
-          '';
-
-          docker-image = pkgs.dockerTools.buildLayeredImage {
-            name = "nzbr.link";
-            tag = "latest";
-
-            fromImage = pkgs.dockerTools.pullImage (import ./nginx.nix);
-
-            contents = [
-              (pkgs.substituteAll {
-                name = "nginx.conf";
-                src = ./nginx.conf;
-                dir = "etc/nginx";
-                root = frontend;
-              })
-            ];
-
-            config.Cmd = [ "nginx" "-g" "daemon off;" ];
-          };
+          frontend = pkgs.callPackage ./frontend { };
+          backend = pkgs.callPackage ./backend { inherit frontend; };
+          docker-image = pkgs.callPackage ./docker.nix { inherit backend; };
         };
 
         checks = {
