@@ -5,19 +5,19 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontend", "frontend\frontend.esproj", "{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "backend\backend.csproj", "{98863FDB-FA8E-4E66-9476-662A6689A3CB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{86D47DB8-0919-4929-9841-EC9B8FCB282F}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.envrc = .envrc
-		.gitlab-ci.yml = .gitlab-ci.yml
 		.gitignore = .gitignore
+		.gitlab-ci.yml = .gitlab-ci.yml
 		docker.nix = docker.nix
 		flake.nix = flake.nix
 	EndProjectSection
 EndProject
-Project("{3B489464-D0CF-449B-A80F-3646582C212E}") = "terraform", "terraform/terraform.esproj", "{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "terraform", "terraform\terraform.esproj", "{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "backend", "backend\backend.fsproj", "{C96DDCE9-E53A-4CC2-8F24-D4B94D77B1B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,16 @@ Global
 		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E95AA4ED-12E2-4947-B21F-67F68A2C16FB}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98863FDB-FA8E-4E66-9476-662A6689A3CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9F3587-5E33-4BC9-9898-D8A1C46700E1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C96DDCE9-E53A-4CC2-8F24-D4B94D77B1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96DDCE9-E53A-4CC2-8F24-D4B94D77B1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96DDCE9-E53A-4CC2-8F24-D4B94D77B1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96DDCE9-E53A-4CC2-8F24-D4B94D77B1B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
