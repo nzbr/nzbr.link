@@ -1,4 +1,4 @@
-export function run(root: HTMLElement): void {
+export function decode(root: HTMLElement): void {
   const cx = (q) => Array.from(root.getElementsByClassName(q)) as HTMLDivElement[];
 
   [...cx('encoded')].forEach(elem => {
