@@ -1,6 +1,6 @@
 terraform {
   backend "kubernetes" {
-    secret_suffix = ""
+    secret_suffix = "state"
   }
 
   required_providers {
