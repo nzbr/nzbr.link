@@ -1,6 +1,10 @@
 stages:
   - build
   - deploy
+  - stop
+
+include:
+  - local: "terraform/.gitlab-ci.yml"
 
 docker:
   stage: build
@@ -16,36 +20,3 @@ docker:
   artifacts:
     paths:
       - image-hash
-
-deploy:
-  stage: deploy
-  only:
-    - main
-  retry:
-    max: 1
-  image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
-  tags:
-    - kube-deploy
-  needs:
-    - docker
-  resource_group: production
-  environment:
-    name: production
-    url: https://nzbr.link
-  variables:
-    TF_ADDRESS: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/${CI_ENVIRONMENT_SLUG}
-  before_script:
-    - apk --no-cache add jq curl
-    - curl -o /bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-    - chmod +x /bin/kubectl
-    - cd terraform
-    - |
-      cat > vars.auto.tfvars << EOF
-      dockerconfigjson = "{ \"auths\": { \"$CI_REGISTRY\": { \"auth\": \"$(echo -n $CI_DEPLOY_USER:$CI_DEPLOY_PASSWORD | base64)\" } } }"
-      kubeconfig = "$KUBECONFIG"
-      image = "${CI_REGISTRY_IMAGE}@$(cat ../image-hash)"
-      EOF
-  script:
-    - gitlab-terraform init
-    - gitlab-terraform plan
-    - gitlab-terraform apply

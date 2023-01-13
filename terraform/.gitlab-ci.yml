@@ -1,0 +1,75 @@
+﻿.before: &before
+  - apk --no-cache add jq curl
+  - curl -o /bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  - chmod +x /bin/kubectl
+  - cd terraform
+  - export KUBE_CONFIG_PATH=$KUBECONFIG
+  - export KUBE_NAMESPACE=nzbr-link-${CI_ENVIRONMENT_SLUG}
+  - kubectl get namespace $KUBE_NAMESPACE || kubectl create namespace $KUBE_NAMESPACE # Create namespace if it doesn't exist
+  - |
+    cat > vars.auto.tfvars << EOF
+    dockerconfigjson = "{ \"auths\": { \"$CI_REGISTRY\": { \"auth\": \"$(echo -n $CI_DEPLOY_USER:$CI_DEPLOY_PASSWORD | base64)\" } } }"
+    kubeconfig = "$KUBECONFIG"
+    namespace = "${KUBE_NAMESPACE}"
+    image = "${CI_REGISTRY_IMAGE}@$(cat ../image-hash)"
+    host = $(echo $CI_ENVIRONMENT_URL | sed -E 's|https?://||')
+    EOF
+
+.deploy:
+  stage: deploy
+  retry:
+    max: 1
+  image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
+  tags:
+    - kube-deploy
+  needs:
+    - docker
+  resource_group: $CI_ENVIRONMENT_SLUG
+  before_script: *before
+  script:
+    - gitlab-terraform init
+    - gitlab-terraform plan
+    - gitlab-terraform apply
+
+deploy:production:
+  extends: .deploy
+  only:
+    - main
+  environment:
+    name: production
+    url: https://nzbr.link
+
+deploy:branch:
+  extends: .deploy
+  only:
+    - branches
+  except:
+    - main
+  environment:
+    name: review/${CI_COMMIT_REF_SLUG}
+    url: https://${CI_ENVIRONMENT_SLUG}.nzbr.link
+    on_stop: stop:branch
+    auto_stop_in: 1 week
+
+stop:branch:
+  stage: stop
+  when: manual
+  only:
+    - branches
+  except:
+    - main
+  image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
+  retry:
+    max: 1
+  needs:
+    - docker
+  resource_group: $CI_ENVIRONMENT_SLUG
+  environment:
+    name: review/${CI_COMMIT_REF_SLUG}
+    url: https://${CI_ENVIRONMENT_SLUG}.nzbr.link
+    action: stop
+  before_script: *before
+  script:
+    - kubectl delete ns $KUBE_NAMESPACE
+
+
