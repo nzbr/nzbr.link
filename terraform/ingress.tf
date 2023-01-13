@@ -1,6 +1,6 @@
 resource "kubernetes_ingress_v1" "ingress" {
   metadata {
-    namespace   = kubernetes_namespace.default.metadata.0.name
+    namespace   = data.kubernetes_namespace.default.metadata.0.name
     name        = local.base_name
     annotations = {
       "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
@@ -37,7 +37,7 @@ resource "kubernetes_ingress_v1" "ingress" {
 
 resource "kubernetes_ingress_v1" "www-redirect" {
   metadata {
-    namespace   = kubernetes_namespace.default.metadata.0.name
+    namespace   = data.kubernetes_namespace.default.metadata.0.name
     name        = "${local.base_name}-www-redirect"
     annotations = {
       "cert-manager.io/cluster-issuer" = "letsencrypt-prod"

@@ -1,6 +1,6 @@
 resource "kubernetes_service" "frontend_svc" {
   metadata {
-    namespace = kubernetes_namespace.default.metadata.0.name
+    namespace = data.kubernetes_namespace.default.metadata.0.name
     name      = local.base_name
   }
   spec {

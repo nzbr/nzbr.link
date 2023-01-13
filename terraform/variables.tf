@@ -13,3 +13,7 @@ variable "image" {
 variable "host" {
   type = string
 }
+
+variable "namespace" {
+  type = string
+}
