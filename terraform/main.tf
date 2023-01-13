@@ -1,5 +1,7 @@
 terraform {
-  backend "http" {}
+  backend "kubernetes" {
+    secret_suffix = "state"
+  }
 
   required_providers {
     kubernetes = {
@@ -15,7 +17,6 @@ provider "kubernetes" {
 
 locals {
   base_name = "nzbr-link"
-  host = "nzbr.link"
   selectors = {
     "app.kubernetes.io/name"     = "nzbr.link"
     "app.kubernetes.io/instance" = "nzbr.link"

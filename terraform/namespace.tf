@@ -1,5 +1,5 @@
-resource "kubernetes_namespace" "default" {
+data "kubernetes_namespace" "default" {
   metadata {
-    name = local.base_name
+    name = var.namespace
   }
 }

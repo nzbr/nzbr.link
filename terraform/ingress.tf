@@ -1,6 +1,6 @@
 resource "kubernetes_ingress_v1" "ingress" {
   metadata {
-    namespace   = kubernetes_namespace.default.metadata.0.name
+    namespace   = data.kubernetes_namespace.default.metadata.0.name
     name        = local.base_name
     annotations = {
       "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
@@ -10,7 +10,7 @@ resource "kubernetes_ingress_v1" "ingress" {
   }
   spec {
     rule {
-      host = local.host
+      host = var.host
       http {
         path {
           path      = "/"
@@ -29,7 +29,7 @@ resource "kubernetes_ingress_v1" "ingress" {
     tls {
       secret_name = "ingress-tls"
       hosts = [
-        local.host
+        var.host
       ]
     }
   }
@@ -37,7 +37,7 @@ resource "kubernetes_ingress_v1" "ingress" {
 
 resource "kubernetes_ingress_v1" "www-redirect" {
   metadata {
-    namespace   = kubernetes_namespace.default.metadata.0.name
+    namespace   = data.kubernetes_namespace.default.metadata.0.name
     name        = "${local.base_name}-www-redirect"
     annotations = {
       "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
@@ -45,14 +45,14 @@ resource "kubernetes_ingress_v1" "www-redirect" {
       "kubernetes.io/tls-acme"         = "true"
       "nginx.ingress.kubernetes.io/configuration-snippet" = <<EOF
         location ~* /.* {
-          return 301 https://${local.host};
+          return 301 https://${var.host};
         }
       EOF
     }
   }
   spec {
     rule {
-      host = "www.${local.host}"
+      host = "www.${var.host}"
       http {
         path {
           path      = "/"
@@ -71,7 +71,7 @@ resource "kubernetes_ingress_v1" "www-redirect" {
     tls {
       secret_name = "ingress-tls"
       hosts = [
-        local.host
+        var.host
       ]
     }
   }
