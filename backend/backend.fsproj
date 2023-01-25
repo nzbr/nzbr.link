@@ -9,7 +9,7 @@
     <SpaRoot>..\frontend\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
     <SpaProxyServerUrl>http://localhost:1234</SpaProxyServerUrl>
-    <SpaProxyLaunchCommand>yarn run start</SpaProxyLaunchCommand>
+    <SpaProxyLaunchCommand>pnpm run start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -28,13 +28,13 @@
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="yarn install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="pnpm install" />
   </Target>
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec WorkingDirectory="$(SpaRoot)" Condition="$(NIX_BUILD_TOP) == ''" Command="yarn install" />
-    <Exec WorkingDirectory="$(SpaRoot)" Condition="$(NIX_BUILD_TOP) == ''" Command="yarn run build" />
+    <Exec WorkingDirectory="$(SpaRoot)" Condition="$(NIX_BUILD_TOP) == ''" Command="pnpm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Condition="$(NIX_BUILD_TOP) == ''" Command="pnpm run build" />
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
