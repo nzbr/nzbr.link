@@ -18,6 +18,10 @@
   icon: mdi:discord
   url: https://discord.com/users/180412544937099264
 
+- label: Last.fm
+  icon: fa:lastfm
+  url: https://www.last.fm/user/nzbr
+
 - label: Steam
   icon: mdi:steam
   url: https://steamcommunity.com/id/_nzbr

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@fontsource/roboto-slab': ^4.5.8
+  '@fortawesome/fontawesome-free': ^6.3.0
   '@mdi/svg': ^6.7.96
   '@parcel/transformer-sass': ^2.6.2
   '@parcel/transformer-typescript-tsc': ^2.8.2
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   '@fontsource/roboto-slab': 4.5.11
+  '@fortawesome/fontawesome-free': 6.3.0
   '@mdi/svg': 6.9.96
   '@xeserv/xeact': 0.69.71
 
@@ -61,6 +63,12 @@ packages:
 
   /@fontsource/roboto-slab/4.5.11:
     resolution: {integrity: sha512-0HXK8WNvZZg4vglhUY4ySBmlh+wnO1JsGcPfCaxDhY24gtRf2POmmeNpSxKFjjQTDV8BiYDXF2H9p15d/6c/YA==}
+    dev: false
+
+  /@fortawesome/fontawesome-free/6.3.0:
+    resolution: {integrity: sha512-qVtd5i1Cc7cdrqnTWqTObKQHjPWAiRwjUPaXObaeNPcy7+WKxJumGBx66rfSFgK6LNpIasVKkEgW8oyf0tmPLA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
     dev: false
 
   /@jridgewell/gen-mapping/0.3.2:
