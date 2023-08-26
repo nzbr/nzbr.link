@@ -6,9 +6,9 @@
   icon: mdi:mastodon
   url: https://chaos.social/@nzbr
 
-# - label: Twitter
-#   icon: mdi:twitter
-#   url: https://twitter.com/_nzbr
+- label: Bluesky
+  icon: mdi:at
+  url: https://bsky.app/profile/nzbr.de
 
 - label: Matrix
   icon: matrix.svg
