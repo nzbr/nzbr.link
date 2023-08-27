@@ -8,7 +8,7 @@ specifiers:
   '@parcel/transformer-typescript-tsc': ^2.8.2
   '@parcel/validator-typescript': ^2.6.2
   '@types/js-yaml': ^4.0.5
-  '@xeserv/xeact': ^0.69.71
+  '@xeserv/xeact': ^0.71.0
   http-proxy-middleware: ^2.0.6
   js-yaml: ^4.1.0
   parcel: ^2.6.2
@@ -22,7 +22,7 @@ dependencies:
   '@fontsource/roboto-slab': 4.5.11
   '@fortawesome/fontawesome-free': 6.3.0
   '@mdi/svg': 6.9.96
-  '@xeserv/xeact': 0.69.71
+  '@xeserv/xeact': 0.71.1
 
 devDependencies:
   '@parcel/transformer-sass': 2.8.3
@@ -965,8 +965,8 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
-  /@xeserv/xeact/0.69.71:
-    resolution: {integrity: sha512-hRgLaAVGzqGWPpuCqbCvZIBhRj9FgWC1KrVL27boG8ZvxkiwUwRMptRAGg0UPJ0pm2zfYv4pFnG0vwmrHomApw==}
+  /@xeserv/xeact/0.71.1:
+    resolution: {integrity: sha512-5q3mvoVsx+AieAIGKbawXtAcPl/DDe+z69rUr3kZbL4BfwWMQAw3ttAJ4h5nORllrsV+2u2jElJg50TOI8FiVQ==}
     dev: false
 
   /abortcontroller-polyfill/1.7.5:
