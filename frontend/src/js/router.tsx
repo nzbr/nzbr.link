@@ -1,5 +1,5 @@
-﻿// @ts-ignore
-import { g, h, r, s, x } from '@xeserv/xeact';
+// @ts-ignore
+import { g, r, s, x } from '@xeserv/xeact';
 
 export interface PageModule {
   Title: () => Promise<string>;
