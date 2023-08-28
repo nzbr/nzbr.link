@@ -46,7 +46,6 @@ body {
   $backdrop-filter: blur(20px);
   @supports (backdrop-filter: $backdrop-filter) or (-webkit-backdrop-filter: $backdrop-filter) {
     backdrop-filter: $backdrop-filter;
-    -webkit-backdrop-filter: $backdrop-filter;
     background-color: #30303070;
   }
   @supports not (backdrop-filter: $backdrop-filter) {
