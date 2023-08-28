@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@parcel/transformer-sass': 2.8.3
-  '@parcel/transformer-typescript-tsc': 2.8.3_typescript@4.9.4
-  '@parcel/validator-typescript': 2.8.3_typescript@4.9.4
+  '@parcel/transformer-typescript-tsc': 2.8.3_typescript@5.2.2
+  '@parcel/validator-typescript': 2.8.3_typescript@5.2.2
   '@types/js-yaml': 4.0.5
   http-proxy-middleware: 2.0.6
   js-yaml: 4.1.0
@@ -841,7 +841,7 @@ packages:
       semver: 5.7.1
     dev: true
 
-  /@parcel/transformer-typescript-tsc/2.8.3_typescript@4.9.4:
+  /@parcel/transformer-typescript-tsc/2.8.3_typescript@5.2.2:
     resolution: {integrity: sha512-hig99OrUJhXuGLN+Nxisvfkj3cggH6GM1nDcS3KWEGoD+UkxLaXkd32Od/mvJ4nUN/ThbAPqwIljmgkgPlYzbw==}
     engines: {node: '>= 12.0.0', parcel: ^2.8.3}
     peerDependencies:
@@ -849,20 +849,20 @@ packages:
     dependencies:
       '@parcel/plugin': 2.8.3
       '@parcel/source-map': 2.1.1
-      '@parcel/ts-utils': 2.8.3_typescript@4.9.4
-      typescript: 4.9.4
+      '@parcel/ts-utils': 2.8.3_typescript@5.2.2
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@parcel/core'
     dev: true
 
-  /@parcel/ts-utils/2.8.3_typescript@4.9.4:
+  /@parcel/ts-utils/2.8.3_typescript@5.2.2:
     resolution: {integrity: sha512-4HMt9B9LF2pDFvSKGImho48tlCvCUl7ly1ZMXvQdmEq2i0yoS81tDsmxX3yly/RVUVeUCGAj1JRuuy1lw5zw1A==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
       typescript: '>=3.0.0'
     dependencies:
       nullthrows: 1.1.1
-      typescript: 4.9.4
+      typescript: 5.2.2
     dev: true
 
   /@parcel/types/2.8.3:
@@ -892,7 +892,7 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@parcel/validator-typescript/2.8.3_typescript@4.9.4:
+  /@parcel/validator-typescript/2.8.3_typescript@5.2.2:
     resolution: {integrity: sha512-2UYGCAwrxh7HIGcrXl8Vu9Sisd8vAu/6Jp/oJV5n9ZQuT5O9pQAlK2lZGSocYRucBtmb4WajII2S2GTzUZeEuQ==}
     engines: {node: '>= 12.0.0', parcel: ^2.8.3}
     peerDependencies:
@@ -900,10 +900,10 @@ packages:
     dependencies:
       '@parcel/diagnostic': 2.8.3
       '@parcel/plugin': 2.8.3
-      '@parcel/ts-utils': 2.8.3_typescript@4.9.4
+      '@parcel/ts-utils': 2.8.3_typescript@5.2.2
       '@parcel/types': 2.8.3
       '@parcel/utils': 2.8.3
-      typescript: 4.9.4
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@parcel/core'
     dev: true
@@ -2093,9 +2093,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typescript/4.9.4:
-    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 

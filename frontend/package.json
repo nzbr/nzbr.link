@@ -30,6 +30,6 @@
     "parcel-transformer-handlebars": "^1.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^5.0.0",
-    "typescript": "^4.7.4"
+    "typescript": "^5.0.0"
   }
 }
