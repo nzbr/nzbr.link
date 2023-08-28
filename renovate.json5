@@ -9,5 +9,14 @@
   },
   nix: {
     enabled: true,
-  }
+  },
+  regexManagers: [
+    {
+      fileMatch: ["^.*\\.nix$"],
+      matchStrings: [
+        '{\\s+pname\\s*=\\s*"(?<depName>[^"]+?)";\\s*version\\s*=\\s*"(?<currentValue>[^"]+?)";\\s*sha256\\s*=\\s*"(?<currentDigest>[^"]+?)";\\s*}',
+      ],
+      datasourceTemplate: "nuget",
+    },
+  ]
 }
