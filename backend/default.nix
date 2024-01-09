@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
 
   nugetDeps = linkFarmFromDrvs "${name}-nuget-deps" (map fetchNuGet [
     # TODO: Might not be needed
-    { pname = "Microsoft.AspNetCore.SpaProxy"; version = "7.0.10"; sha256 = "cf64e7dd29a474335a0338fa100a4e60307924742b1c79f88fb2f0fc326d3647"; }
+    { pname = "Microsoft.AspNetCore.SpaProxy"; version = "8.0.1"; sha256 = "cf64e7dd29a474335a0338fa100a4e60307924742b1c79f88fb2f0fc326d3647"; }
   ]);
 
   unpackPhase = ''
