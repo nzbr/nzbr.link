@@ -23,7 +23,7 @@ module.exports = {
       return `img/icons/${button.icon}`;
     })(button.icon),
   })),
-  address: 'TmljbyBKYW5zZW4KYy9vIGRldnNhdXIgVUcgKGhhZnR1bmdzYmVzY2hy5G5rdCkKTWFydGluLVNjaG1lad9lci1XZWcgMTJhCjQ0MjI3IERvcnRtdW5k',
+  address: 'TmljbyBKYW5zZW4KYy9vIEJsb2NrIFNlcnZpY2VzClN0dXR0Z2FydGVyIFN0ci4gMTA2CjcwNzM2IEZlbGxiYWNo',
   email: 'a29udGFrdEBuemJyLmRl',
   phone: 'KzQ5MTU5MDg2MzU0NzA=',
 };
