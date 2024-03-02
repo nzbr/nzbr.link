@@ -12,8 +12,8 @@ dependencies:
     specifier: ^6.3.0
     version: 6.4.2
   '@mdi/svg':
-    specifier: ^6.7.96
-    version: 6.9.96
+    specifier: ^7.0.0
+    version: 7.2.96
   '@xeserv/xeact':
     specifier: ^0.71.0
     version: 0.71.1
@@ -160,8 +160,8 @@ packages:
     dev: true
     optional: true
 
-  /@mdi/svg@6.9.96:
-    resolution: {integrity: sha512-QPW/IHP4mXW2aN8FopcgXaOHBTSjYdGevGvil3HFcCiq1PAfRbVGgiJ7v4qemv0b0fFbfKXpCKgQl3DgOOyXag==}
+  /@mdi/svg@7.2.96:
+    resolution: {integrity: sha512-rxzuSL2RSt/pWWnFnUFQi5GJArm2tHMhx20Gee3Ydn+xT2bqbR4syfgdPrq2b+j+n5LjC7C8Fb1QDM6LKeF0cA==}
     dev: false
 
   /@mischnic/json-sourcemap@0.1.0:
