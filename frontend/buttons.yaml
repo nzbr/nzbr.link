@@ -1,21 +1,21 @@
 - label: GitHub
-  icon: mdi:github
+  icon: si:github
   url: https://github.com/nzbr
 
 - label: Mastodon
-  icon: mdi:mastodon
+  icon: si:mastodon
   url: https://chaos.social/@nzbr
 
 - label: Bluesky
-  icon: mdi:at
+  icon: si:bluesky
   url: https://bsky.app/profile/nzbr.de
 
 - label: Matrix
-  icon: matrix.svg
-  url: "https://matrix.to/#/@nzbr:nzbr.de"
+  icon: si:matrix
+  url: https://matrix.to/#/@nzbr:nzbr.de
 
 - label: Discord
-  icon: mdi:discord
+  icon: si:discord
   url: https://discord.com/users/@nzbr
 
 - label: Last.fm
@@ -23,7 +23,7 @@
   url: https://www.last.fm/user/nzbr
 
 - label: Steam
-  icon: mdi:steam
+  icon: si:steam
   url: https://steamcommunity.com/id/_nzbr
 
 - label: barq
