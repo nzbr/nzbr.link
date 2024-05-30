@@ -1,5 +1,6 @@
 // @ts-ignore
 import { g, r, s, x } from '@xeserv/xeact';
+import { titleSuffix } from './consts';
 
 export interface PageModule {
   Title: () => Promise<string>;
@@ -8,16 +9,9 @@ export interface PageModule {
 
 r(async () => {
 
-  const title_suffix = ' - nzbr.link';
-
   s('a[router-link]').forEach((a: HTMLAnchorElement) => a.href = `#${a.getAttribute('router-link')}`);
 
-  const default_page_element = <div id='default-page' innerHTML={g('default-page').innerHTML}></div>;
-  const default_page_title = document.title.replace(new RegExp(title_suffix + '$'), '');
-  const default_page = {
-    Title: async () => default_page_title,
-    Page: async () => default_page_element,
-  };
+  const defaultPage = await import('./pages/default');
 
   const outlet = g('router-outlet');
 
@@ -29,13 +23,13 @@ r(async () => {
         page = await import('./pages/impressum');
         break;
       default:
-        page = default_page;
+        page = defaultPage;
         break;
     }
 
     let content = await page.Page();
     outlet.appendChild(content);
-    document.title = (await page.Title()) + title_suffix;
+    document.title = (await page.Title()) + titleSuffix;
   };
 
   window.addEventListener('hashchange', navigate);
