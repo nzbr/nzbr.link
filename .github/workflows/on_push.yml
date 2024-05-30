@@ -15,7 +15,7 @@ jobs:
     outputs:
       digest: ${{ steps.digest.outputs.digest }}
     steps:
-      - uses: cachix/install-nix-action@v14
+      - uses: cachix/install-nix-action@v27
       - run: nix-env -iA nixpkgs.skopeo
       - run: skopeo login -u ${{ github.repository_owner }} -p $GITHUB_TOKEN ghcr.io
 
