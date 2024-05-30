@@ -1,0 +1,26 @@
+﻿name: On Push to main
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ steps.digest.outputs.digest }}
+    steps:
+      - uses: cachix/install-nix-action@v14
+      - run: nix-env -iA nixpkgs.skopeo
+      - run: skopeo login -u ${{ github.repository_owner }} -p $GITHUB_TOKEN ghcr.io
+
+      - uses: actions/checkout@v4
+      - run: nix build -L .#docker-image
+      - run: skopeo copy --insecure-policy docker-archive:result docker://ghcr.io/${{ github.repository }}:main --digestfile image-hash
+      - id: digest
+        run: echo "digest=$(cat image-hash)" >> $GITHUB_OUTPUT
