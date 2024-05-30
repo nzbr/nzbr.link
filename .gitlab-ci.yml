@@ -6,8 +6,7 @@ stages:
 docker:
   stage: build
   needs: []
-  tags:
-    - nix
+  image: nixos/nix
   interruptible: true
   script:
     - nix-env -iA nixpkgs.skopeo
