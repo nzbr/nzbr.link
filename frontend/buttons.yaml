@@ -6,9 +6,9 @@
   icon: si:mastodon
   url: https://chaos.social/@nzbr
 
-- label: Bluesky
-  icon: si:bluesky
-  url: https://bsky.app/profile/nzbr.de
+- label: Signal
+  icon: si:signal
+  url: https://signal.me/#eu/nu5dMdIVI7nwjLsnMPU26WqtzV8aZV-sYW9etAcgWigThFnR17JN46pY0DAOXOsb
 
 - label: Matrix
   icon: si:matrix
@@ -17,6 +17,10 @@
 - label: Discord
   icon: si:discord
   url: https://discord.com/users/@nzbr
+
+- label: Bluesky
+  icon: si:bluesky
+  url: https://bsky.app/profile/nzbr.de
 
 - label: Last.fm
   icon: fa:lastfm
