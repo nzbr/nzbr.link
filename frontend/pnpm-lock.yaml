@@ -12,8 +12,8 @@ dependencies:
     specifier: ^6.3.0
     version: 6.4.2
   '@mdi/svg':
-    specifier: ^6.7.96
-    version: 6.9.96
+    specifier: ^7.0.0
+    version: 7.4.47
   '@xeserv/xeact':
     specifier: ^0.71.0
     version: 0.71.1
@@ -164,8 +164,8 @@ packages:
     dev: true
     optional: true
 
-  /@mdi/svg@6.9.96:
-    resolution: {integrity: sha512-QPW/IHP4mXW2aN8FopcgXaOHBTSjYdGevGvil3HFcCiq1PAfRbVGgiJ7v4qemv0b0fFbfKXpCKgQl3DgOOyXag==}
+  /@mdi/svg@7.4.47:
+    resolution: {integrity: sha512-WQ2gDll12T9WD34fdRFgQVgO8bag3gavrAgJ0frN4phlwdJARpE6gO1YvLEMJR0KKgoc+/Ea/A0Pp11I00xBvw==}
     dev: false
 
   /@mischnic/json-sourcemap@0.1.0:
@@ -2056,9 +2056,6 @@ packages:
     resolution: {integrity: sha512-2GTVocFkwblV/TIg9AmT7TI2fO4xdWkyN8aFUEVtiVNWt96GTR3FgQyHFValfCbcj1k9Xf962Ws2hYXYUr9k1Q==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
-    peerDependenciesMeta:
-      '@parcel/core':
-        optional: true
     dependencies:
       '@parcel/config-default': 2.9.3(@parcel/core@2.9.3)
       '@parcel/core': 2.9.3
