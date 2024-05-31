@@ -1,4 +1,4 @@
-﻿local values = import './values.libsonnet';
+local values = import './values.libsonnet';
 
 {
   apiVersion: 'networking.k8s.io/v1',
@@ -13,6 +13,7 @@
     },
   },
   spec: {
+    ingressClassName: 'nginx',
     rules: [{
       host: values.host,
       http: {
@@ -29,10 +30,10 @@
           },
         }],
       },
-      tls: {
-        secretName: values.secretName,
-        hosts: [values.host],
-      },
+    }],
+    tls: [{
+      hosts: [values.host],
+      secretName: values.name + '-tls',
     }],
   },
 }

@@ -1,4 +1,4 @@
-﻿local values = import './values.libsonnet';
+local values = import './values.libsonnet';
 
 {
   apiVersion: 'v1',

@@ -1,4 +1,4 @@
-﻿local values = import './values.jsonnet';
+local values = import './values.libsonnet';
 
 {
   apiVersion: 'v1',
@@ -15,7 +15,7 @@
       {
         name: 'http',
         port: 80,
-        targetPort: 80,
+        targetPort: 'http',
       },
     ],
   },

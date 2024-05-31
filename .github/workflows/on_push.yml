@@ -28,3 +28,45 @@ jobs:
       - run: skopeo copy --insecure-policy docker-archive:result docker://ghcr.io/${{ github.repository }}:main --digestfile image-hash
       - id: digest
         run: echo "digest=$(cat image-hash)" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    env:
+      ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_TOKEN }}
+      ARGOCD_SERVER: argocd.nzbr.de
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/download/v2.11.0/argocd-linux-amd64
+          sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+          rm argocd-linux-amd64
+
+      - name: Create ArgoCD application
+        run: |
+          argocd --grpc-web \
+            app create nzbr.link \
+            --upsert \
+            --project ci \
+            --repo "https://github.com/${{ github.repository }}.git" \
+            --path deployment \
+            --revision ${{ github.sha }} \
+            --set-finalizer \
+            --dest-name in-cluster \
+            --dest-namespace nzbr-link \
+            --jsonnet-ext-var-str 'image=ghcr.io/${{ github.repository }}@${{ needs.build.outputs.digest }}' \
+
+      - name: Sync ArgoCD application
+        run: |
+          argocd --grpc-web \
+            app sync nzbr.link \
+            --prune \
+            --timeout 300
+
+      - name: Wait for ArgoCD application to be healthy
+        run: |
+          argocd --grpc-web \
+            app wait nzbr.link \
+            --health \
+            --timeout 300

@@ -1,4 +1,4 @@
-﻿local values = import './values.libsonnet';
+local values = import './values.libsonnet';
 
 {
   apiVersion: "apps/v1",
@@ -11,16 +11,20 @@
   spec: {
     replicas: 1,
     selector: {
-      matchLabels: values.labels,
+      matchLabels: values.selectors,
     },
     template: {
       metadata: {
-        labels: values.labels,
+        labels: values.selectors,
       },
       spec: {
         containers: [{
           name: values.name,
           image: values.image,
+          ports: [{
+            name: "http",
+            containerPort: 8080,
+          }],
         }],
       },
     },

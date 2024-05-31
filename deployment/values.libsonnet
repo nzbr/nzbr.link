@@ -1,4 +1,4 @@
-﻿{
+{
   name: 'nzbr-link',
   selectors: {
     'app.kubernetes.io/name': 'nzbr.link',
@@ -6,5 +6,5 @@
   },
   image: std.extVar('image'),
   host: 'nzbr.link',
-  namespace: 'nzbr-link-production',
+  namespace: 'nzbr-link',
 }
