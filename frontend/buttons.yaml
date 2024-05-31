@@ -18,9 +18,9 @@
   icon: si:matrix
   url: https://matrix.to/#/@nzbr:nzbr.de
 
-- label: Discord
-  icon: si:discord
-  url: https://discord.com/users/@nzbr
+#- label: Discord
+#  icon: si:discord
+#  url: https://discord.com/users/@nzbr
 
 - label: Bluesky
   icon: si:bluesky
