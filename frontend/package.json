@@ -24,7 +24,7 @@
     "@parcel/transformer-typescript-tsc": "^2.8.2",
     "@parcel/validator-typescript": "^2.6.2",
     "@types/js-yaml": "^4.0.5",
-    "http-proxy-middleware": "^2.0.6",
+    "http-proxy-middleware": "^3.0.0",
     "js-yaml": "^4.1.0",
     "parcel": "^2.6.2",
     "parcel-transformer-fonts": "^1.1.3",
