@@ -1,6 +1,6 @@
-#- label: GPN DECT
-#  icon: mdi:phone
-#  url: javascript:alert("Call NZBR (6927)")
+- label: 38C3 DECT
+  icon: mdi:phone
+  url: javascript:alert("Call NZBR (6927)")
 
 - label: GitHub
   icon: si:github
